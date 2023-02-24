@@ -2,11 +2,7 @@ require 'bundler/setup'
 require 'rest-client'
 require 'json'
 require 'webmock/rspec'
-
-# Require everything in 'lib'
-Dir['lib/**/*.rb'].each do |f|
-  require './' + f
-end
+require 'one_ruby'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

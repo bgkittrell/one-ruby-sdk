@@ -3,25 +3,25 @@ require 'one_ruby/movie'
 RSpec.describe OneRuby::Movie do
   let(:quote_response) do
     {
-      "docs": [
+      'docs' => [
         {
-          "_id": '5cd95395de30eff6ebccde56',
-          "dialog": 'Man Flesh!',
-          "movie": '5cd95395de30eff6ebccde50',
-          "character": '5cd95395de30eff6ebccde51'
+          '_id' => '5cd95395de30eff6ebccde56',
+          'dialog' => 'Man Flesh!',
+          'movie' => '5cd95395de30eff6ebccde50',
+          'character' => '5cd95395de30eff6ebccde51'
         },
         {
-          "_id": '5cd95395de30eff6ebccde57',
-          "dialog": 'Pippin!',
-          "movie": '5cd95395de30eff6ebccde57',
-          "character": '5cd95395de30eff6ebccde58'
+          '_id' => '5cd95395de30eff6ebccde57',
+          'dialog' => 'Pippin!',
+          'movie' => '5cd95395de30eff6ebccde57',
+          'character' => '5cd95395de30eff6ebccde58'
         }
       ],
-      "total": 8,
-      "limit": 1000,
-      "offset": 0,
-      "page": 1,
-      "pages": 1
+      'total' => 8,
+      'limit' => 1000,
+      'offset' => 0,
+      'page' => 1,
+      'pages' => 1
     }
   end
 
@@ -32,8 +32,12 @@ RSpec.describe OneRuby::Movie do
 
       quotes = OneRuby::Quote.list('5cd95395de30eff6ebccde5b')
       expect(quotes.size).to eq(2)
+    end
+  end
 
-      quote = quotes.shift
+  describe '.transform' do
+    it 'transforms the json response into object' do
+      quote = OneRuby::Quote.transform(quote_response['docs'][0])
       expect(quote.id).to eq('5cd95395de30eff6ebccde56')
       expect(quote.dialog).to eq('Man Flesh!')
       expect(quote.movie_id).to eq('5cd95395de30eff6ebccde50')
