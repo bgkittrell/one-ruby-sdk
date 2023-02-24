@@ -1,8 +1,6 @@
-# One::Ruby::Sdk
+# One::Ruby To Rule Them All
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/one/ruby/sdk`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Quickly and easily get *all* of the LOTR movies into your Ruby project. Amaze your friends with the best quotes, at your fingertips. 
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Development
 
@@ -32,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/one-ruby-sdk.
+Bug reports and pull requests are welcome on GitHub at https://github.com/bgkittrell/one-ruby-sdk.
 
 ## License
 
