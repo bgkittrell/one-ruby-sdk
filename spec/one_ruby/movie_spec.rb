@@ -1,5 +1,3 @@
-require 'one_ruby/movie'
-
 RSpec.describe OneRuby::Movie do
   let(:movie_response) do
     {

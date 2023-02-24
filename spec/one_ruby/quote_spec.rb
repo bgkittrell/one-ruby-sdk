@@ -1,6 +1,4 @@
-require 'one_ruby/movie'
-
-RSpec.describe OneRuby::Movie do
+RSpec.describe OneRuby::Quote do
   let(:quote_response) do
     {
       'docs' => [
