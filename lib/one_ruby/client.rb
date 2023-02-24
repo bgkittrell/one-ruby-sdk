@@ -1,3 +1,6 @@
+require 'rest-client'
+require 'json'
+
 module OneRuby
   class Client
     def self.get(path)

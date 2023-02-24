@@ -2,9 +2,9 @@
 
 ![One does not simply](https://github.com/bgkittrell/one-ruby-sdk/blob/main/undefined.jpg?raw=true)
 
-We'll not anymore, because with the OneRuby gem you can get a list of all of the LOTR movies and quotes, in your code!
+We'll not anymore! With the OneRuby gem you can get a list of all of the LOTR movies and quotes, in your code!
 
-This gem uses [The One API to Rule Them All](https://the-one-api.dev).
+This gem is a wrapper for [The One API to Rule Them All](https://the-one-api.dev).
 
 ## Installation
 
@@ -73,7 +73,7 @@ quotes[0].character_id #=> '5cd95395de30eff6ebccde51'
 ## Coming Soon!
 
 - More objects including characters and books
-- Querying
+- Filtering
 - Pagination support
 
 ## Development

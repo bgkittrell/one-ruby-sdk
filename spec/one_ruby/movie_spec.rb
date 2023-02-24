@@ -43,7 +43,7 @@ RSpec.describe OneRuby::Movie do
   describe '.find' do
     it 'returns a single movie' do
       stub_request(:get,
-                   OneRuby::ROOT_URL + 'movie/5cd95395de30eff6ebccde56?limit=2000').to_return(body: JSON.generate(movie_response['docs'][0]))
+                   OneRuby::ROOT_URL + 'movie/5cd95395de30eff6ebccde56?limit=2000').to_return(body: JSON.generate(movie_response))
 
       movie = OneRuby::Movie.find('5cd95395de30eff6ebccde56')
       expect(movie.id).to eq('5cd95395de30eff6ebccde56')

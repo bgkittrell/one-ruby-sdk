@@ -10,8 +10,13 @@ module OneRuby
     end
 
     def self.find(id)
-      movie = OneRuby::Client.get "movie/#{id}"
-      transform(movie)
+      results = OneRuby::Client.get "movie/#{id}"
+      docs = results['docs']
+      if docs.empty?
+        nil
+      else
+        transform(docs.first)
+      end
     end
 
     def self.transform(response)
