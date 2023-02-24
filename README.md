@@ -1,6 +1,10 @@
-# One::Ruby To Rule Them All
+# Has this ever happened to you?
 
-Quickly and easily get *all* of the LOTR movies into your Ruby project. Amaze your friends with the best quotes, at your fingertips. 
+![One does not simply](https://github.com/bgkittrell/one-ruby-sdk/blob/main/undefined.jpg?raw=true)
+
+We'll not anymore, because with the OneRuby gem you can get a list of all of the LOTR movies and quotes, in your code!
+
+This gem uses [The One API to Rule Them All](https://the-one-api.dev).
 
 ## Installation
 
@@ -18,9 +22,59 @@ Or install it yourself as:
 
     $ gem install one-ruby-sdk
 
+## Configuration
+
+Simply set your API Key as below. For Rails, include this in an initializer file. Sign up for a key [here](https://the-one-api.dev/sign-up)
+
+```ruby
+OneRuby.config do |c|
+    c.api_key = '[PASTE API KEY HERE]'
+end
+```
+
 ## Usage
 
+This gem currently only supports looking up movie data.
 
+### Movies
+
+```ruby
+# Get a list of ALL the LOTR movies
+movies = OneRuby::Movie.list
+=> [<OneRuby::Movie>]
+
+# Get details about a single movie
+movie = OneRuby::Movie.find('5cd95395de30eff6ebccde56')
+=> <OneRuby::Movie>
+
+movie.id #=> '5cd95395de30eff6ebccde56'
+movie.name #=> 'The Lord of the Rings Series'
+movie.runtime_in_minutes #=> 558
+movie.budget_in_millions #=> 281
+movie.box_office_revenue_in_millions #=> 2917
+movie.academy_award_nominations #=> 30
+movie.academy_award_wins #=> 17
+movie.rotten_tomatoes_score #=> 94
+```
+
+### Quotes
+
+```ruby
+# Get a list of quotes from a movie
+quotes = OneRuby::Quote.list('5cd95395de30eff6ebccde5b')
+=> [<OneRuby::Quote>]
+
+quotes[0].id #=> '5cd95395de30eff6ebccde56'
+quotes[0].dialog #=> 'Man Flesh!'
+quotes[0].movie_id #=> '5cd95395de30eff6ebccde50'
+quotes[0].character_id #=> '5cd95395de30eff6ebccde51'
+```
+
+## Coming Soon!
+
+- More objects including characters and books
+- Querying
+- Pagination support
 
 ## Development
 
